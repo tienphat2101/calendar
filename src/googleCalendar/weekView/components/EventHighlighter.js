@@ -92,15 +92,17 @@ class EventHighlighter extends Component {
               this.props.startDate
             ),
             ...eventHighlighter,
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            whiteSpace: 'nowrap',
           }}
         >
-          {this.props.event.title} <br />
-          <span style={{fontSize: 10}}>
-            {moment (this.props.event.start).format ('hh:mm a')}
-            {' '}
-            -
-            {' '}
-            {moment (this.props.event.end).format ('hh:mm a')}
+          <strong style={{ fontSize: '11px' }}>{this.props.event.title}</strong>
+          <br />
+          <span style={{ fontSize: '9px', opacity: 0.8 }}>
+            {moment(this.props.event.start).format('HH:mm')}
+            {' - '}
+            {moment(this.props.event.end).format('HH:mm')}
           </span>
         </div>
       </React.Fragment>
